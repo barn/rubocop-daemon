@@ -71,7 +71,7 @@ PORT_PATH="$PROJECT_CACHE_DIR/port"
 STDIN_PATH="$PROJECT_CACHE_DIR/stdin"
 STATUS_PATH="$PROJECT_CACHE_DIR/status"
 LOCK_PATH="$CACHE_DIR/running.lock"
-RUBOCOP_DAEMON="$COMMAND_PREFIX rubocop-daemon"
+RUBOCOP_DAEMON="${COMMAND_PREFIX} rubocop-daemon"
 
 # If a lock file exist, wait up to 5 seconds.
 i=0
