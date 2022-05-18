@@ -8,6 +8,14 @@ if [ -n "$RUBOCOP_DAEMON_USE_BUNDLER" ]; then
   COMMAND_PREFIX="bundle exec"
 fi
 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brewdir="$(brew --prefix)"
+    if [ -e "${brewdir}/opt/asdf/libexec/asdf.sh" ]; then
+        . "${brewdir}/opt/asdf/libexec/asdf.sh"
+        asdf shell $(grep ruby ~/.tool-versions)
+    fi
+fi
+
 if ! command -v rubocop-daemon > /dev/null; then
   $COMMAND_PREFIX rubocop $@
   exit $?
