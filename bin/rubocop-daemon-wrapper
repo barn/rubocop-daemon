@@ -63,6 +63,10 @@ if [ -z "$PROJECT_ROOT" ]; then
   PROJECT_ROOT="$(pwd -P)"
 fi
 
+# if [ -e "$PROJECT_ROOT/Gemfile" ] && grep -q 'rubocop-daemon' Gemfile; then
+#         COMMAND_PREFIX='bundle exec '
+# fi
+
 CACHE_DIR="$HOME/.cache/rubocop-daemon"
 PROJECT_CACHE_KEY="$(echo ${PROJECT_ROOT:1} | tr '/' '+')"
 PROJECT_CACHE_DIR="$CACHE_DIR/$PROJECT_CACHE_KEY"
